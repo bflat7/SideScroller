@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool _onGround = true;
     private bool _jumped = false;
     private bool _facingRight = true;
+    private float _AttackingMultiplier = .3f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,10 @@ public class PlayerController : MonoBehaviour
         }
 
         var hSpeed = Input.GetAxis("Horizontal") * MoveSpeed;
+        if (PlayerAnimator.GetBool("IsAttacking"))
+        {
+            hSpeed *= _AttackingMultiplier;
+        } 
         if (hSpeed > 0)
             _facingRight = true;
         else if (hSpeed < 0)
