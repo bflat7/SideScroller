@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1194738893
+    locked: 0
+  - name: Interactables
+    uniqueID: 3434998949
+    locked: 0
+  - name: Agent
+    uniqueID: 4253191555
+    locked: 0
+  - name: UI
+    uniqueID: 686676527
+    locked: 0

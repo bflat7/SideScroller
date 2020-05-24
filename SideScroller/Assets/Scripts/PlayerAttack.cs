@@ -31,9 +31,8 @@ public class PlayerAttack : MonoBehaviour
         // apply damage
     }
 
-    public void BufferATtack()
+    public void BufferAttack()
     {
-        Debug.Log("entered function");
         _CanAttack = true;
     }
 }

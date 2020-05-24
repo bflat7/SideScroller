@@ -2,21 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraFollower : MonoBehaviour
 {
+    public static int Score = 0;
     public GameObject PlayerAgent;
     public float maxHDistance;
     public float minPosX;
     public float yOffset;
+    public Canvas Canvas;
 
     private Vector2 velocity;
     private float hSpeed = 0f;
+    private Text _ScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
         hSpeed = PlayerAgent.GetComponent<PlayerController>().MoveSpeed;
+        _ScoreText = Canvas.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -32,5 +37,6 @@ public class CameraFollower : MonoBehaviour
         }
 
         this.transform.position = new Vector3(this.transform.position.x, PlayerAgent.transform.position.y + yOffset, this.transform.position.z);
+        _ScoreText.text = $"Score : {Score}";
     }
 }
