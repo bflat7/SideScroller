@@ -32,13 +32,18 @@ public class PlayerController : MonoBehaviour
             {
                 _onGround = false;
                 Player.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+                PlayerAnimator.SetTrigger("Jump");
             } else if (!_jumped)
             {
                 _jumped = true;
                 Player.velocity = new Vector2(Player.velocity.x, 0);
                 Player.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+                PlayerAnimator.SetTrigger("Jump");
             }
         }
+
+        if (!_onGround || _jumped)
+            PlayerAnimator.SetFloat("JumpVelocity", Player.velocity.y);
 
         var hSpeed = Input.GetAxis("Horizontal") * MoveSpeed;
         if (PlayerAnimator.GetBool("IsAttacking"))
@@ -62,6 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             _onGround = true;
             _jumped = false;
+            PlayerAnimator.SetTrigger("Grounded");
         }
     }
 }

@@ -45,6 +45,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            CameraFollower.Score += 10;
             Destroy(this.gameObject);
         }
     }
