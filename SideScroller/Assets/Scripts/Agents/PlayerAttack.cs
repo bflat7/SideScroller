@@ -28,7 +28,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // apply damage
+        switch (collision.tag)
+        {
+            case "Agent":
+                Agent agentScript = collision.GetComponent<Agent>();
+                agentScript.GotHit(this.transform.position.x > collision.transform.position.x ? -1 : 1);
+                break;
+        }
     }
 
     public void BufferAttack()
