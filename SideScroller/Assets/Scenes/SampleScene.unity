@@ -1232,7 +1232,7 @@ MonoBehaviour:
   Player: {fileID: 1078189217}
   MoveSpeed: 3
   JumpForce: 4
-  GameMenu: {fileID: 319888396}
+  GameMenu: {fileID: 319888393}
 --- !u!4 &1078189219
 Transform:
   m_ObjectHideFlags: 0
