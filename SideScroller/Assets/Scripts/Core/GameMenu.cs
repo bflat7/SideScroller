@@ -9,24 +9,26 @@ public class GameMenu : MonoBehaviour
     //public Button btn_Resume;
     //public Button btn_MainMenu;
     //public Button btn_Quit;
+    private bool _GameMenuDisplayed = false;
 
-    void Start()
+    public void ProcessGameMenu()
     {
-        this.gameObject.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (Input.GetButtonDown("Cancel"))
+        if (_GameMenuDisplayed)
         {
             Resume();
+        } else
+        {
+            Time.timeScale = 0;
+            _GameMenuDisplayed = true;
+            this.gameObject.SetActive(_GameMenuDisplayed);
         }
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        this.gameObject.SetActive(false);
+        _GameMenuDisplayed = false;
+        this.gameObject.SetActive(_GameMenuDisplayed);
     }
 
     public void MainMenu()

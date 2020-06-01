@@ -10,21 +10,8 @@ public class Agent : MonoBehaviour
     private int _Health = 100;
     private int _DamageCooldown = 4;
 
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        if (_Health <= 0)
-            Destroy(this.gameObject);
-    }
-
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
-        
     //}
 
     //private void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +30,8 @@ public class Agent : MonoBehaviour
     public void GotHit(int direction)
     {
         _Health -= 10;
+        if (_Health <= 0)
+            Destroy(this.gameObject);
         AgentAnimator.SetTrigger("Hit");
         AgentRigidbody.AddForce(new Vector2(direction, 0), ForceMode2D.Impulse);
     }

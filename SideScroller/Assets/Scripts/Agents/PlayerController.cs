@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Player;
     public float MoveSpeed;
     public float JumpForce;
-    public Canvas GameMenu;
+    public GameMenu GameMenu;
 
     private bool _onGround = true;
     private bool _jumped = false;
@@ -30,8 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            Time.timeScale = 0;
-            GameMenu.gameObject.SetActive(true);
+            GameMenu.ProcessGameMenu();
         }
         if (!Paused)
         {
