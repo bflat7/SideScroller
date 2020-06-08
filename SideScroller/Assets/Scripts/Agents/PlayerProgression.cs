@@ -2,29 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerProgression : MonoBehaviour
 {
-    private List<SkillsTarget> _Toggles;
-    private GameObject _GameObject;
-
-    [SerializeField]
-    private GameMenu _PauseMenu;
-    [SerializeField]
-    private TextAsset _SkillsJson;
-    [SerializeField]
-    private RectTransform _CursorTransform;
     [SerializeField]
     private Text LevelExp;
+    private Text XpGain;
     private readonly float XpGrowthMultiplier = 1.5f;
 
-    [NonSerialized]
-    public SkillNode Skills;
 
     [HideInInspector]
     public int Experience { get; private set; }
@@ -35,77 +23,50 @@ public class PlayerProgression : MonoBehaviour
 
     private void Awake()
     {
-        _GameObject = this.gameObject;
-        Skills = JsonUtility.FromJson<SkillNode>(_SkillsJson.text);
-        _Toggles = this.GetComponentsInChildren<SkillsTarget>().ToList();
-        LoadSkills(Skills, null);
-        _GameObject.SetActive(false);
-
         Experience = 0;
         LevelUp = 100;
         Level = 1;
+        XpGain = LevelExp.GetComponentsInChildren<Text>().FirstOrDefault(c => c != LevelExp);
+        XpGain.text = string.Empty;
         UpdateXpLvlUi();
     }
 
-    public void MoveCursor(RectTransform transform)
-    {
-        var pos = transform.localPosition;
-        _CursorTransform.localPosition = new Vector2(pos.x, pos.y + 2.11648f);
-    }
 
 
-    private void LoadSkills(SkillNode current, SkillNode parent)
-    {
-        current.Parent = parent;
-        if (current.Active)
-        {
-            _Toggles.FirstOrDefault(a => a.Id == current.Id);
-            _Toggles.FirstOrDefault(toggle => toggle.Id == current.Id)?.UpdateToggle();
-        }
-        foreach(var child in current.Children)
-        {
-            LoadSkills(child, current);
-        }
-    }
-
-    public void SkillClicked(SkillsTarget skillTarget)
-    {
-        var clickedSkill = Skills.FindNode(skillTarget.Id);
-        if (clickedSkill.Active == false && clickedSkill.Parent.Active)
-        {
-            clickedSkill.Active = true;
-            skillTarget.UpdateToggle();
-        }
-    }
-
-    public void BackClicked()
-    {
-        _GameObject.SetActive(false);
-        _PauseMenu.ProcessGameMenu();
-    }
 
     public void AddXp(int Xp)
     {
-        Experience += Xp;
-        while (Experience >= LevelUp)
-        {
-            ++Level;
-            LevelUp = LevelUp + (int)Mathf.Floor(LevelUp * XpGrowthMultiplier);
-        }
-        UpdateXpLvlUi();
+        //Experience += Xp;
+        //while (Experience >= LevelUp)
+        //{
+        //    ++Level;
+        //    LevelUp = LevelUp + (int)Mathf.Floor(LevelUp * XpGrowthMultiplier);
+        //}
+        //UpdateXpLvlUi();
+        StartCoroutine(TransitionXp(Xp));
     }
 
-    private void UpdateXpLvlUi()
+    public IEnumerator TransitionXp(int Xp)
+    {
+        for (; Xp >= 0; Xp -=1)
+        {
+            Experience += 1;
+            if (Experience >= LevelUp)
+            {
+                ++Level;
+                LevelUp = LevelUp + (int)Mathf.Floor(LevelUp * XpGrowthMultiplier);
+            }
+            UpdateXpLvlUi(Xp);
+            yield return null;
+        }
+    }
+
+    private void UpdateXpLvlUi(int? iterativeXpgain = null)
     {
         LevelExp.text = 
 $@"Level: {Level}
 XP: {Experience}";
+        XpGain.text = (iterativeXpgain == null || iterativeXpgain == 0) ?  string.Empty : $@"+{iterativeXpgain}";
     }
-}
-
-public class SkillClickedEventArgs
-{
-    Toggle toggle;
-    int id;
 }
 

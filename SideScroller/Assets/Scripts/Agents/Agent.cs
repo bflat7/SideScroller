@@ -9,7 +9,7 @@ public class Agent : MonoBehaviour
     public int Level;
     public PlayerProgression playerProgression;
 
-    private int _Health = 100;
+    private int _Health = 50;
     private int _BaseXp = 100;
     private float _EnemyXpMultiplier = 1.3f;
 
