@@ -1,0 +1,812 @@
+fileFormatVersion: 2
+guid: 6d7a1c9b4b6b73242a8915bb135c4a3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7966484009389155128
+    second: YellowmanFull_0
+  - first:
+      213: 4281365283449732511
+    second: YellowmanFull_1
+  - first:
+      213: -4841219743459230324
+    second: YellowmanFull_2
+  - first:
+      213: -8313210382134224656
+    second: YellowmanFull_3
+  - first:
+      213: 3214597688658028155
+    second: YellowmanFull_4
+  - first:
+      213: -5386834321226570616
+    second: YellowmanFull_5
+  - first:
+      213: -3597232673455035292
+    second: YellowmanFull_6
+  - first:
+      213: 8971745238088886914
+    second: YellowmanFull_7
+  - first:
+      213: 8030610334311684806
+    second: YellowmanFull_8
+  - first:
+      213: 5859663328419396473
+    second: YellowmanFull_9
+  - first:
+      213: -1216658874997500564
+    second: YellowmanFull_10
+  - first:
+      213: -4632618466619043833
+    second: YellowmanFull_11
+  - first:
+      213: 891119538891367654
+    second: YellowmanFull_12
+  - first:
+      213: 5143276426497248256
+    second: YellowmanFull_13
+  - first:
+      213: -3950639337692836121
+    second: YellowmanFull_14
+  - first:
+      213: -7803631497072371897
+    second: YellowmanFull_15
+  - first:
+      213: -1927750790884584891
+    second: YellowmanFull_16
+  - first:
+      213: 2388440641731787173
+    second: YellowmanFull_17
+  - first:
+      213: -657166882683595149
+    second: YellowmanFull_18
+  - first:
+      213: 210949792739243059
+    second: YellowmanFull_19
+  - first:
+      213: 4492861046054836024
+    second: YellowmanFull_20
+  - first:
+      213: -834868563940417961
+    second: YellowmanFull_21
+  - first:
+      213: -2833236735422110058
+    second: YellowmanFull_22
+  - first:
+      213: -1616151822314189666
+    second: YellowmanFull_23
+  - first:
+      213: 7571367318903275024
+    second: YellowmanFull_24
+  - first:
+      213: -8623006543837918608
+    second: YellowmanFull_25
+  - first:
+      213: 9133044155478146452
+    second: YellowmanFull_26
+  - first:
+      213: -5012130128383337919
+    second: YellowmanFull_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YellowmanFull_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 507
+        width: 60
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc978f600d517190800000000000000
+      internalID: -7966484009389155128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 506
+        width: 50
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9df5b9aa077a6b30800000000000000
+      internalID: 4281365283449732511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 508
+        width: 64
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d318f0b4880dcb0800000000000000
+      internalID: -4841219743459230324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 508
+        width: 69
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8dcc5e33b81ac80800000000000000
+      internalID: -8313210382134224656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 508
+        width: 50
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76e040f09b8c9c20800000000000000
+      internalID: 3214597688658028155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_5
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 507
+        width: 64
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884686bb9be1e35b0800000000000000
+      internalID: -5386834321226570616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_6
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 489
+        width: 24
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ca84441ff041ec0800000000000000
+      internalID: -3597232673455035292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 374
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a279b72ca028c70800000000000000
+      internalID: 8971745238088886914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_8
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 374
+        width: 57
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca9a321d85727f60800000000000000
+      internalID: 8030610334311684806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 378
+        width: 71
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b32d950c4b15150800000000000000
+      internalID: 5859663328419396473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_10
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 375
+        width: 71
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6592f6033f8d1fe0800000000000000
+      internalID: -1216658874997500564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_11
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 374
+        width: 60
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700d14d9c02a5bfb0800000000000000
+      internalID: -4632618466619043833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_12
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 374
+        width: 66
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4a700df74ed5c00800000000000000
+      internalID: 891119538891367654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_13
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 375
+        width: 71
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c420fd8a6906740800000000000000
+      internalID: 5143276426497248256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_14
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 375
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee422924728c29c0800000000000000
+      internalID: -3950639337692836121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 219
+        width: 67
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74793f2bf7ee3b390800000000000000
+      internalID: -7803631497072371897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_16
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 220
+        width: 62
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54298dd8ed04f35e0800000000000000
+      internalID: -1927750790884584891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_17
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 220
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a97781fb12752120800000000000000
+      internalID: 2388440641731787173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_18
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 220
+        width: 95
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3765e77b33641e6f0800000000000000
+      internalID: -657166882683595149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_19
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 220
+        width: 61
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3343aa508b17de200800000000000000
+      internalID: 210949792739243059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_20
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 219
+        width: 95
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837d9433159d95e30800000000000000
+      internalID: 4492861046054836024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_21
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 219
+        width: 62
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ed034e673f964f0800000000000000
+      internalID: -834868563940417961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_22
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 219
+        width: 82
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696e39443325ea8d0800000000000000
+      internalID: -2833236735422110058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_23
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 69
+        width: 51
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cccd7fa764299e0800000000000000
+      internalID: -1616151822314189666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_24
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 69
+        width: 50
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e3b333676e21960800000000000000
+      internalID: 7571367318903275024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_25
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 65
+        width: 68
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a0caa2c3de45880800000000000000
+      internalID: -8623006543837918608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_26
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 69
+        width: 49
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d7b3d35471fbe70800000000000000
+      internalID: 9133044155478146452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowmanFull_27
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 69
+        width: 51
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a9da12436517ab0800000000000000
+      internalID: -5012130128383337919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

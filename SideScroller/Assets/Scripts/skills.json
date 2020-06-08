@@ -1,0 +1,39 @@
+{
+  "Id": 1,
+  "Name": "Node 1",
+  "Description": "First Node",
+  "Active": true,
+  "Children": [{
+  "Id": 2,
+    "Name": "Child 1",
+    "Description": "First child",
+    "Active": false,
+    "Children": [{
+      "Id": 3,
+      "Name": "Child 2",
+      "Description": "Second Child",
+      "Active": false,
+      "Children": []
+    }]
+  }, {
+    "Id": 4,
+    "Name": "Child 3",
+    "Description": "Third Child",
+    "Active": false,
+    "Children": []
+  }, {
+    "Id": 5,
+    "Name": "Child 4",
+    "Description": "Fourth Child",
+    "Active": false,
+    "Children": [
+      {
+        "Id": 6,
+        "Name": "Child 5",
+        "Description": "Fitfth Child",
+        "Active": false,
+        "Children": []
+      }
+    ]
+  }]
+}

@@ -10,6 +10,13 @@ public class GameMenu : MonoBehaviour
     //public Button btn_MainMenu;
     //public Button btn_Quit;
     private bool _GameMenuDisplayed = false;
+    [SerializeField]
+    private GameObject _SkillsGameObject;
+
+    private void Start()
+    {
+        this.gameObject.SetActive(false);
+    }
 
     public void ProcessGameMenu()
     {
@@ -27,6 +34,13 @@ public class GameMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+        _GameMenuDisplayed = false;
+        this.gameObject.SetActive(_GameMenuDisplayed);
+    }
+
+    public void Skills()
+    {
+        _SkillsGameObject.SetActive(true);
         _GameMenuDisplayed = false;
         this.gameObject.SetActive(_GameMenuDisplayed);
     }

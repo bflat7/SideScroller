@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,12 +17,14 @@ public class CameraFollower : MonoBehaviour
     private Vector2 velocity;
     private float hSpeed = 0f;
     private Text _ScoreText;
+    private Text _LevelText;
 
     // Start is called before the first frame update
     void Start()
     {
         hSpeed = PlayerAgent.GetComponent<PlayerController>().MoveSpeed;
-        _ScoreText = Canvas.GetComponentInChildren<Text>();
+        _ScoreText = Canvas.GetComponentsInChildren<Text>().FirstOrDefault(i => i.name == "CoinCount");
+        _LevelText = Canvas.GetComponentsInChildren<Text>().FirstOrDefault(i => i.name == "Level");
     }
 
     // Update is called once per frame
