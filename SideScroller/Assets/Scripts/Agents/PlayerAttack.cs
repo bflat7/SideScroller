@@ -8,6 +8,9 @@ public class PlayerAttack : MonoBehaviour
     public Animator PlayerAnimator;
 
     private bool _CanAttack = true;
+    private bool _Blocking = false;
+
+    public bool Blocking => _Blocking;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +21,29 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && _CanAttack)
+        if (Input.GetButtonDown("Fire1") && _CanAttack)
         {
+            if (_Blocking)
+                SetBlock(false);
+
             PlayerAnimator.SetTrigger("Attack");
             _CanAttack = false;
         }
 
+        if (Input.GetButton("Fire2"))
+        {
+            SetBlock(true);
+        } else if (_Blocking)
+        {
+            SetBlock(false);
+        }
+
+    }
+
+    private void SetBlock(bool block)
+    {
+        _Blocking = block;
+        PlayerAnimator.SetBool("Blocking", _Blocking);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

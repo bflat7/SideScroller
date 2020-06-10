@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -12,12 +13,23 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Player;
     public float MoveSpeed;
     public float JumpForce;
-    public GameMenu GameMenu;
+    public List<Item> InventoryItems = new List<Item>();
+    public UIHandler mainUIHandler;
 
     private bool _onGround = true;
     private bool _jumped = false;
     private bool _facingRight = true;
+    private bool _isBlocking;
     private float _AttackingMultiplier = .3f;
+    private PlayerAttack AttackController;
+    private EquippedSlot[] _EquippedItems;
+
+    private void Awake()
+    {
+        _EquippedItems = mainUIHandler.gameObject.GetComponentsInChildren<EquippedSlot>().OrderBy(go => go.name).ToArray();
+        AttackController = this.GetComponent<PlayerAttack>();
+        _isBlocking = AttackController.Blocking;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            GameMenu.ProcessGameMenu();
+            mainUIHandler.WakeGameMenu();
         }
         if (!Paused)
         {
@@ -79,5 +91,10 @@ public class PlayerController : MonoBehaviour
             _jumped = false;
             PlayerAnimator.SetTrigger("Grounded");
         }
+    }
+
+    public void AddItem(Item item)
+    {
+        InventoryItems.Add(item);
     }
 }

@@ -7,26 +7,25 @@ using UnityEngine.UI;
 
 public class SkillTree : MonoBehaviour
 {
-    private List<SkillsTarget> _Toggles;
-    private GameObject _GameObject;
 
     [NonSerialized]
     public SkillNode Skills;
 
     [SerializeField]
-    private GameMenu _PauseMenu;
-    [SerializeField]
     private TextAsset _SkillsJson;
     [SerializeField]
     private RectTransform _CursorTransform;
+    private UIHandler mainUIHandler;
+    private List<SkillsTarget> _Toggles;
+    private GameObject _GameObject;
 
     private void Awake()
     {
+        mainUIHandler = GetComponentInParent<UIHandler>();
         _GameObject = this.gameObject;
         Skills = JsonUtility.FromJson<SkillNode>(_SkillsJson.text);
         _Toggles = this.GetComponentsInChildren<SkillsTarget>().ToList();
         LoadSkills(Skills, null);
-        _GameObject.SetActive(false);
     }
 
     public void MoveCursor(RectTransform transform)
@@ -59,12 +58,6 @@ public class SkillTree : MonoBehaviour
     }
     public void BackClicked()
     {
-        _GameObject.SetActive(false);
-        _PauseMenu.ProcessGameMenu();
-    }
-    public class SkillClickedEventArgs
-    {
-        Toggle toggle;
-        int id;
+        mainUIHandler.WakeGameMenu();
     }
 }

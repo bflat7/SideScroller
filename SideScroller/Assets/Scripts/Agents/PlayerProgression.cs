@@ -10,8 +10,11 @@ public class PlayerProgression : MonoBehaviour
 {
     [SerializeField]
     private Text LevelExp;
+    [SerializeField]
+    private Core _CoreGame;
     private Text XpGain;
-    private readonly float XpGrowthMultiplier = 1.5f;
+    private float XpGrowthMultiplier = 1.5f;
+    private float XpGainMultiplier = 1f;
 
 
     [HideInInspector]
@@ -20,9 +23,11 @@ public class PlayerProgression : MonoBehaviour
     public int LevelUp { get; private set; }
     [HideInInspector]
     public int Level { get; private set; }
+    public Guid ServiceId => ServiceGuids.Player;
 
     private void Awake()
     {
+        _CoreGame.RegisteredDependencies.Add(ServiceGuids.Player, this);
         Experience = 0;
         LevelUp = 100;
         Level = 1;
@@ -31,18 +36,14 @@ public class PlayerProgression : MonoBehaviour
         UpdateXpLvlUi();
     }
 
-
-
+    public void AddXpMultiplier(float additive)
+    {
+        XpGainMultiplier += additive;
+    }
 
     public void AddXp(int Xp)
     {
-        //Experience += Xp;
-        //while (Experience >= LevelUp)
-        //{
-        //    ++Level;
-        //    LevelUp = LevelUp + (int)Mathf.Floor(LevelUp * XpGrowthMultiplier);
-        //}
-        //UpdateXpLvlUi();
+        Xp = Mathf.FloorToInt(Xp * XpGainMultiplier);
         StartCoroutine(TransitionXp(Xp));
     }
 
@@ -54,7 +55,7 @@ public class PlayerProgression : MonoBehaviour
             if (Experience >= LevelUp)
             {
                 ++Level;
-                LevelUp = LevelUp + (int)Mathf.Floor(LevelUp * XpGrowthMultiplier);
+                LevelUp = LevelUp + Mathf.FloorToInt(LevelUp * XpGrowthMultiplier);
             }
             UpdateXpLvlUi(Xp);
             yield return null;
@@ -69,4 +70,3 @@ XP: {Experience}";
         XpGain.text = (iterativeXpgain == null || iterativeXpgain == 0) ?  string.Empty : $@"+{iterativeXpgain}";
     }
 }
-
