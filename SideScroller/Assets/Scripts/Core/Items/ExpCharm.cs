@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class ExpCharm : InventoryItem, IItemEffect
 {
     private PlayerProgression progression;
-    private float AdditiveXp = .01f;
+    private float AdditiveXp = .25f;
     public bool IsActive { get ; set ; }
 
     public void ActivateEffect()

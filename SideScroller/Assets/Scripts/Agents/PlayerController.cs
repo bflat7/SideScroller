@@ -78,7 +78,11 @@ public class PlayerController : MonoBehaviour
             var calcHSpeed = hSpeed * Time.deltaTime;
             Player.transform.Translate(new Vector2(calcHSpeed, 0));
 
-            SpriteRenderer.flipX = !_facingRight;
+            if (_facingRight)
+                this.transform.localScale = new Vector2(1, 1);
+            else
+                this.transform.localScale = new Vector2(-1, 1);
+            //SpriteRenderer.flipX = !_facingRight;
             PlayerAnimator.SetFloat("MoveSpeed", Math.Abs(hSpeed));
         }
     }
