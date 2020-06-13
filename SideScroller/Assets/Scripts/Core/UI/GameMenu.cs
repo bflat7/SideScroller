@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class GameMenu : MonoBehaviour
 {
-    //public Button btn_Resume;
-    //public Button btn_MainMenu;
-    //public Button btn_Quit;
     private bool _GameMenuDisplayed = false;
     private UIHandler mainUiHandler;
 

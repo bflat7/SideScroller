@@ -11,7 +11,7 @@ public class Droppable : MonoBehaviour, IDropHandler
     {
         if (this.gameObject.transform.childCount == 0)
         {
-            var itemEffect = eventData.pointerDrag.GetComponent<IItemEffect>();
+            var itemEffect = eventData.pointerDrag.GetComponent<InventoryItem>();
             if (itemEffect.IsActive)
                 itemEffect.RemoveEffect();
             eventData.pointerDrag.transform.SetParent(this.gameObject.transform);

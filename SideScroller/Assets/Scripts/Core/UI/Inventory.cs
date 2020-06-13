@@ -5,20 +5,19 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class Inventory : MonoBehaviour
 {
     private List<Transform> _InventorySlots;
     private GameObject _InventoryMenu;
     private UIHandler _MainUiHandler;
-    private Core _CoreGame;
     public List<Item> InventoryItems = new List<Item>();
-
+    public DependencyRepository Repo;
 
     private void Awake()
     {
         _MainUiHandler = GetComponentInParent<UIHandler>();
-        _CoreGame = GetComponentInParent<Core>();
         _InventorySlots = this.gameObject
                             .GetComponentsInChildren<Transform>()
                             .Where(go => go.name.Contains("inventory0"))
@@ -31,7 +30,7 @@ public class Inventory : MonoBehaviour
     public void AddInventoryItem(Item item)
     {
         var prefab = Instantiate(item.InventoryItemPrefab);
-        prefab.GetComponent<IItemEffect>().RegisterServices(_CoreGame.RegisteredDependencies);
+        prefab.GetComponent<InventoryItem>().RegisterServices(Repo);
         //InventoryItems.Add(item);
         //var gameObject = new GameObject("", 
         //    typeof(InventoryItem), 
@@ -50,10 +49,13 @@ public class Inventory : MonoBehaviour
     }
 }
 
-public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public abstract class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private GameObject _PotentialParent;
-    private Image itemImage;
+    abstract internal Guid InventoryItemId { get; }
+    abstract public bool IsActive { get; set; }
+    abstract public void ActivateEffect();
+    abstract public void RemoveEffect();
+    abstract public void RegisterServices(DependencyRepository repo);
 
     public void OnPointerDown(PointerEventData eventData)
     {

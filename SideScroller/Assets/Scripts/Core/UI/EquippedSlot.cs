@@ -7,13 +7,13 @@ using UnityEngine.UIElements;
 
 public class EquippedSlot : MonoBehaviour, IDropHandler
 {
-    public IItemEffect EquippedItem;
+    public InventoryItem EquippedItem;
 
     public void OnDrop(PointerEventData eventData)
     {
         if (EquippedItem == null)
         {
-            EquippedItem = eventData.pointerDrag.GetComponent<IItemEffect>();
+            EquippedItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             eventData.pointerDrag.transform.SetParent(this.gameObject.transform);
         }
         if (!EquippedItem.IsActive)

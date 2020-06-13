@@ -4,34 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ExpCharm : InventoryItem, IItemEffect
+public class ExpCharm : InventoryItem
 {
     private PlayerProgression progression;
     private float AdditiveXp = .25f;
-    public bool IsActive { get ; set ; }
+    public override bool IsActive { get ; set ; }
 
-    public void ActivateEffect()
+    internal override Guid InventoryItemId => Guid.NewGuid();
+
+    public override void ActivateEffect()
     {
         IsActive = true;
         progression.AddXpMultiplier(AdditiveXp);
     }
 
-    public void RemoveEffect()
+    public override void RemoveEffect()
     {
         IsActive = false;
         progression.AddXpMultiplier(-AdditiveXp);
     }
 
-    public void RegisterServices(Dictionary<Guid, MonoBehaviour> registeredServices)
+    public override void RegisterServices(DependencyRepository repo)
     {
-        progression = registeredServices[ServiceGuids.Player].GetComponent<PlayerProgression>();
+        progression = repo.ObjectDependencies[RegisteredServiceIds.PlayerProgression].GetComponent<PlayerProgression>();
     }
-}
-
-public interface IItemEffect
-{
-    bool IsActive { get; set; }
-    void ActivateEffect();
-    void RemoveEffect();
-    void RegisterServices(Dictionary<Guid, MonoBehaviour> registeredServices);
 }

@@ -3,37 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpCharm : InventoryItem, IItemEffect
+public class JumpCharm : InventoryItem
 {
     private PlayerController controller;
-    public bool IsActive { get; set; }
+    public override bool IsActive { get; set; }
 
-    public void ActivateEffect()
+    internal override Guid InventoryItemId => Guid.NewGuid();
+
+    public override void ActivateEffect()
     {
         IsActive = true;
         controller.JumpForce += 1;
     }
 
-    public void RegisterServices(Dictionary<Guid, MonoBehaviour> registeredServices)
+    public override void RegisterServices(DependencyRepository repo)
     {
-        controller = registeredServices[ServiceGuids.Player].GetComponent<PlayerController>();
+        controller = repo.ObjectDependencies[RegisteredServiceIds.PlayerController].GetComponent<PlayerController>();
     }
 
-    public void RemoveEffect()
+    public override void RemoveEffect()
     {
         IsActive = false;
         controller.JumpForce -= 1;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

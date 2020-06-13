@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IRegisteredService
 {
     public static bool Paused = false;
     public SpriteRenderer SpriteRenderer;
@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
     private bool _isBlocking;
     private float _AttackingMultiplier = .3f;
     private PlayerAttack AttackController;
-    private EquippedSlot[] _EquippedItems;
+
+    public Guid Id => RegisteredServiceIds.PlayerController;
 
     private void Awake()
     {
-        _EquippedItems = mainUIHandler.gameObject.GetComponentsInChildren<EquippedSlot>().OrderBy(go => go.name).ToArray();
         AttackController = this.GetComponent<PlayerAttack>();
         _isBlocking = AttackController.Blocking;
     }

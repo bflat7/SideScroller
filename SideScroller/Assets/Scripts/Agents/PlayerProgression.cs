@@ -6,12 +6,10 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerProgression : MonoBehaviour
+public class PlayerProgression : MonoBehaviour, IRegisteredService
 {
     [SerializeField]
     private Text LevelExp;
-    [SerializeField]
-    private Core _CoreGame;
     private Text XpGain;
     private float XpGrowthMultiplier = 1.5f;
     private float XpGainMultiplier = 1f;
@@ -23,11 +21,11 @@ public class PlayerProgression : MonoBehaviour
     public int LevelUp { get; private set; }
     [HideInInspector]
     public int Level { get; private set; }
-    public Guid ServiceId => ServiceGuids.Player;
+
+    public Guid Id => RegisteredServiceIds.PlayerProgression;
 
     private void Awake()
     {
-        _CoreGame.RegisteredDependencies.Add(ServiceGuids.Player, this);
         Experience = 0;
         LevelUp = 100;
         Level = 1;
@@ -69,4 +67,15 @@ $@"Level: {Level}
 XP: {Experience}";
         XpGain.text = (iterativeXpgain == null || iterativeXpgain == 0) ?  string.Empty : $@"+{iterativeXpgain}";
     }
+}
+
+public interface IRegisteredService
+{
+    Guid Id { get; }
+}
+
+public static class RegisteredServiceIds
+{
+    public static readonly Guid PlayerProgression = Guid.NewGuid();
+    public static readonly Guid PlayerController = Guid.NewGuid();
 }
